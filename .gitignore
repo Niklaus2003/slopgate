@@ -38,3 +38,8 @@ web/node_modules/
 # OS artifacts
 .DS_Store
 Thumbs.db
+
+# Documentation & internal scripts (local only)
+docs/
+scripts/
+
