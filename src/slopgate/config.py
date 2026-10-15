@@ -10,6 +10,10 @@ from typing import Any, Optional
 try:
     from dotenv import load_dotenv
     load_dotenv()
+    # Strip empty string env vars so boto3 doesn't treat empty tokens as active bearer auth
+    for _k in ["AWS_BEARER_TOKEN_BEDROCK", "AWS_SESSION_TOKEN", "GITHUB_WRITE_TOKEN", "GITHUB_SANDBOX_REPO"]:
+        if _k in os.environ and not os.environ[_k].strip():
+            del os.environ[_k]
 except ImportError:
     pass
 
