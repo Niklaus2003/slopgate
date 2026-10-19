@@ -4,6 +4,8 @@
 
 > *How we built **SlopGate**: a local, CPU-only, confidence-gated GitHub triage system pairing a 1.9B linear-attention model (**Strands Decider 2B**) with **Amazon Bedrock** to achieve sub-10ms routine triage, 0.0% false rejections, and zero unattended community closures.*
 
+> 📺 **Watch the 94-Second Walkthrough Demo:** [https://youtu.be/arvDCS77caM](https://youtu.be/arvDCS77caM)
+
 ---
 
 ## 1. The Open Source Crisis: The Tsunami of AI Slop
@@ -179,6 +181,8 @@ To prove the pattern is truly domain-agnostic, we built a complete enterprise cu
 
 To provide maintainers and hackathon evaluators with an intuitive way to test and inspect SlopGate, we built a modern dark-mode web application in `web/`:
 
+> 📺 **Watch the Walkthrough Demo Video:** [https://youtu.be/arvDCS77caM](https://youtu.be/arvDCS77caM)
+
 1. **⚡ Live Triage Simulator (`/`):**
    - 6 one-click pre-seeded fixtures:
      - `clean-bug`: Trailing slash url_prefix ValueError in Flask $\to$ Real Bug $\to$ High Confidence $\to$ Auto-Proceed.
@@ -220,4 +224,7 @@ By anchoring routine decisions in a small, 1.9B linear-attention model running l
 
 ---
 
-*SlopGate is open-source under the MIT License. Explore the codebase and the reusable `#policy` pattern on GitHub: [https://github.com/Niklaus2003/slopgate](https://github.com/Niklaus2003/slopgate).*
+*SlopGate is open-source under the MIT License:*
+- **GitHub Repository:** [https://github.com/Niklaus2003/slopgate](https://github.com/Niklaus2003/slopgate)
+- **Reusable Decision Pattern (`#policy`):** [https://github.com/Niklaus2003/slopgate/tree/main/patterns/confidence_band_handler](https://github.com/Niklaus2003/slopgate/tree/main/patterns/confidence_band_handler)
+- **YouTube Walkthrough Demo:** [https://youtu.be/arvDCS77caM](https://youtu.be/arvDCS77caM)
