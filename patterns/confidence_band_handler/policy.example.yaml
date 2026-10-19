@@ -1,0 +1,28 @@
+# Example Policy Configuration for ConfidenceBandHandler
+version: 1
+
+bands:
+  choice:
+    high_at_least: 0.80
+    medium_at_least: 0.50
+  noul:
+    true_at_least: 0.85
+    false_at_most: 0.15
+
+tools_gated:
+  apply_label:
+    requires: ["Q1"]
+  post_comment:
+    requires: ["Q1"]
+  close_item:
+    always: "confirm"  # Safety invariant: destructive operations require human approval
+
+routing:
+  real_bug_report:
+    high: "proceed"
+    medium: "confirm"
+    low: "confirm"
+  low_effort:
+    high: "proceed"
+    medium: "confirm"
+    low: "confirm"

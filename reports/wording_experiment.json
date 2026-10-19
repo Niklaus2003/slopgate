@@ -1,0 +1,35 @@
+{
+  "item_count": 3,
+  "model_id": "StrandsAgents/strands-decider-2B-hobson-v21",
+  "device": "cpu",
+  "threads": 4,
+  "variants": {
+    "v1_canonical": {
+      "p50_item_ms": 27203.28,
+      "p95_item_ms": 108788.11,
+      "mean_item_ms": 47402.29,
+      "p50_q1_ms": 13598.78,
+      "p95_q1_ms": 54350.98,
+      "avg_q1_confidence": 0.3446,
+      "q1_distribution": {
+        "real_bug_report": 1,
+        "low_effort": 1,
+        "ready_for_review": 1
+      },
+      "avg_n1_p_true": 0.5776
+    },
+    "v2_maintainer": {
+      "p50_item_ms": 25006.26,
+      "p95_item_ms": 49263.1,
+      "mean_item_ms": 27945.68,
+      "p50_q1_ms": 12503.04,
+      "p95_q1_ms": 24631.48,
+      "avg_q1_confidence": 0.3263,
+      "q1_distribution": {
+        "real_bug_report": 2,
+        "ready_for_review": 1
+      },
+      "avg_n1_p_true": 0.4841
+    }
+  }
+}

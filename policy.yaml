@@ -1,0 +1,63 @@
+version: 1
+repo: "pallets/flask"
+
+state:
+  max_tokens: 250
+  body_chars: 800
+  include_author_history: false      # opt-in; off by default (protect newcomers)
+
+bands:
+  choice:
+    high_at_least: 0.80
+    medium_at_least: 0.50
+  noul:
+    true_at_least: 0.85
+    false_at_most: 0.15
+
+duplicate:
+  similarity_min: 0.55
+
+routing:                             # kind -> behavior; hard rules in code override this
+  real_bug_report:
+    high: proceed
+    medium: confirm
+    low: guide
+  support_question:
+    high: proceed
+    medium: confirm
+    low: guide
+  likely_duplicate:
+    high: confirm
+    medium: confirm
+    low: guide
+  low_effort:
+    high: proceed_soft
+    medium: confirm
+    low: guide
+  security_report:
+    high: confirm
+    medium: confirm
+    low: confirm                     # floor enforced in code
+  ready_for_review:
+    high: proceed
+    medium: confirm
+    low: guide
+
+labels:
+  triaged: "triaged"
+  needs_info: "needs-info"
+  question: "question"
+  low_effort: "needs-more-detail"
+  ready: "ready-for-review"
+
+templates:                           # used without Bedrock when possible
+  support_question: "templates/support_question.md"
+  needs_repro: "templates/needs_repro.md"
+
+tools_gated:
+  apply_label:
+    requires: ["Q1"]
+  post_comment:
+    requires: ["Q1"]
+  close_item:
+    always: confirm                  # redundant with code rule, kept for clarity

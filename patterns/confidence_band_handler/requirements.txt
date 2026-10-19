@@ -1,0 +1,5 @@
+# Minimal dependencies for patterns/confidence_band_handler
+# Zero application or heavy framework dependencies.
+strands-agents>=1.61.0
+pyyaml>=6.0
+pytest>=8.0

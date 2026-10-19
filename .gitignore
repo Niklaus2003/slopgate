@@ -1,45 +1,76 @@
-# Environments
+# ==============================================================================
+# SlopGate Git Ignore Rules
+# ==============================================================================
+
+# Virtual Environments
 .venv/
 env/
 venv/
 ENV/
 
-# Python cache
+# Python Bytecode & Build Artifacts
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.pytest_cache/
-.coverage
-htmlcov/
 dist/
 build/
 *.egg-info/
 
-# SlopGate local databases & data cache
+# Testing, Linting & Coverage
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# SlopGate Local SQLite Databases & WAL files
 *.db
 *.db-wal
 *.db-shm
+*.sqlite
+*.sqlite3
 data/cache/
 
-# Secrets & Local Configurations (NEVER COMMIT)
+# Secrets & Environment Configurations (NEVER COMMIT)
 .env
 .env.local
 .env.*.local
 
-# Cloned reference repos
+# Cloned Reference Repositories
 _refs/
 
-# Next.js build output
+# Utility & Benchmark Scripts
+scripts/
+
+# Next.js Build Output & Frontend Dependencies
 web/.next/
 web/out/
 web/node_modules/
+.next/
+node_modules/
 
-# OS artifacts
+# Submission Media & Walkthrough Recordings (Deliverables stored in artifacts/docs)
+data/voiceover/
+*.mp4
+*.mp3
+*.wav
+*.aac
+*.m4a
+*.flac
+*.ogg
+*.webp
+*.tmp
+*.temp
+.tempmediaStorage/
+
+# Operating System & IDE Artifacts
 .DS_Store
 Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+*.log
 
-# Documentation & internal scripts (local only)
-docs/
-scripts/
-
+# Local Experiment Reports
+reports/backtest.md
